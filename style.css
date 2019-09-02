@@ -1,0 +1,145 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    height: 100vh;
+    background: #f4f4f4;
+    font-family: sans-serif;
+}
+
+.intro {
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    transition: opacity 500ms ease;
+}
+
+.intro h1 {
+    font-size: 50px;
+    color: #4f4f4f;
+}
+
+.intro button,
+.duel .options button {
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
+    font-style: italic;
+    background: #4f4f4f;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+.duel {
+    height: 50vh;
+    position: absolute;
+    top: 0%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    padding: 30px;
+    transition: opacity 500ms ease 500ms;
+}
+
+.duel .winner {
+    color: #4f4f4f;
+    text-align: center;
+    font-size: 50px;
+}
+
+.duel .hands,
+.duel .options {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.duel .player-hand {
+    transform: rotateY(180deg);
+}
+
+.score {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 20vh;
+    transition: opacity 1000ms ease;
+}
+
+.score h1 {
+    font-size: 30px;
+    color: #4f4f4f;
+}
+
+.score p {
+    text-align: center;
+    font-size: 20px;
+    padding: 10px;
+    color: #4f4f4f;
+    font-size: 25px;
+}
+
+div.fadeOut {
+    opacity: 0;
+    pointer-events: none; /* Can't click the buttons */
+}
+
+div.fadeIn {
+    opacity: 1;
+    pointer-events: all; /* Can click the buttons */
+}
+
+@keyframes shakeComputer {
+    0% {
+        transform: translateY(0px);
+    }
+    17%{
+        transform: translateY(-50px);
+    }
+    34% {
+        transform: translateY(0px);
+    }
+    51%{
+        transform: translateY(-50px);
+    }
+    68% {
+        transform: translateY(0px);
+    }
+    85%{
+        transform: translateY(-50px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+@keyframes shakePlayer {
+    0% {
+        transform: translateY(0px) rotateY(180deg);
+    }
+    17%{
+        transform: translateY(-50px) rotateY(180deg);
+    }
+    34% {
+        transform: translateY(0px) rotateY(180deg);
+    }
+    51%{
+        transform: translateY(-50px) rotateY(180deg);
+    }
+    68% {
+        transform: translateY(0px) rotateY(180deg);
+    }
+    85%{
+        transform: translateY(-50px) rotateY(180deg);
+    }
+    100% {
+        transform: translateY(0px) rotateY(180deg);
+    }
+}
